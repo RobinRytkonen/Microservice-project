@@ -33,8 +33,6 @@ j
 :LeoProjectGaming/src/main/resources/application.properties,f/0/f0c9acc3ae2deb0eb3865cd972e0f4579b8b7958
 f
 6LeoProjectPlayer/.mvn/wrapper/maven-wrapper.properties,b/0/b0d3d2343ca643280eae40285d37b91ad3704a65
-c
-3LeoProjectPlayer/src/main/resources/application.yml,2/c/2cd51c2bda7d75ab8863d4f5b71abce9abc120bc
 Ž
 ^LeoProjectGaming/src/test/java/com/work/LeoProjectGaming/LeoProjectGamingApplicationTests.java,d/8/d8ad6d2376528e56cd3ba42d913f0ae273caf564
 J
@@ -43,10 +41,6 @@ I
 LeoProjectGaming/mvnw.cmd,6/1/619d90c3eb471cfb1224034601c9ba7470988344
 Ž
 ^LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/LeoProjectPlayerApplicationTests.java,c/c/cc4c363aad18b148ed3d58073a95e49276ac671e
-m
-=LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml,8/5/85e85db9951af7e01207af0e938ca6feab8a6632
-r
-BLeoProjectPlayer/src/main/resources/liquibase/changelog-master.xml,c/9/c96f5d440b56fd4ecb9967de9816d88f8ddf7bc8
 H
 LeoProjectGaming/pom.xml,4/5/45e2058a88ff9c05b78e024ae5a5af21b51607c0
 K

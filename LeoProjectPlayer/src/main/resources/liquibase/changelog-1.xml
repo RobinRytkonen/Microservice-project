@@ -7,7 +7,7 @@
 
     <changeSet id="1" author="Robin Rytkönen">
         <comment>Add player table</comment>
-        <createTable tableName="PlayerInfo">
+        <createTable tableName="Player_Info">
             <column name="playerId" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="playerId"/>
             </column>
