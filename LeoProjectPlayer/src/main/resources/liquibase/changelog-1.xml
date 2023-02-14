@@ -6,9 +6,9 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
     <changeSet id="1" author="Robin Rytkönen">
-        <comment>Add player table</comment>
-        <createTable tableName="Player_Info">
-            <column name="playerId" type="bigint" autoIncrement="true">
+        <comment>Add player_info table</comment>
+        <createTable tableName="Player">
+            <column name="Id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="playerId"/>
             </column>
             <column name="Name" type="VARCHAR(255)"/>
@@ -17,7 +17,7 @@
             <column name="Phone number" type="VARCHAR(255)"/>
             <column name="Location" type="VARCHAR(255)"/>
             <column name="Country" type="VARCHAR(255)"/>
-            <column name="GamingBalance" type="BIGINT"/>
+            <column name="Gaming balance" type="BIGINT"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

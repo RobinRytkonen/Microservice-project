@@ -1,19 +1,25 @@
-package com.work.LeoProjectPlayer.entity;
+package com.work.LeoProjectPayment.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
 @NoArgsConstructor
 @ToString
 @Entity
-public class Player {
+public class PaymentAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private int playerId;
+    private int id;
+
+    @Column(name = "PaymentId")
+    private int paymentId;
 
     @Column(name = "Name")
     private String name;
@@ -33,16 +39,16 @@ public class Player {
     @Column(name = "Country")
     private String country;
 
-    @Column(name = "Gaming balance")
-    private double gamingbalance;
+    @Column(name = "Balance")
+    private double balance;
 
-    public Player(String name, String lastName, String email, int phoneNumber, String location, String country, double gamingbalance) {
+    public PaymentAccount(String name, String lastName, String email, int phoneNumber, String location, String country, double balance) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.location = location;
         this.country = country;
-        this.gamingbalance = gamingbalance;
+        this.balance = balance;
     }
 }
