@@ -1,6 +1,6 @@
 # microservice-project
 
-Learning project on working with. microservices.
+Learning project!
 
 3 services built with java, spring boot, mysql, kafka, liquibase
 
