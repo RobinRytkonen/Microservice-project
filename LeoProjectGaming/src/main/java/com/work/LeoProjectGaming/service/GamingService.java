@@ -12,15 +12,14 @@ import java.util.Random;
 import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
 
 @Service
-public class GamingKafkaService {
+public class GamingService {
 
     public Random winOrLose = new Random();
 
     private final KafkaTemplate<String, Object> kafkaTemplate;
-
     private final BettingHistoryRepository bettingHistoryRepository;
 
-    public GamingKafkaService(KafkaTemplate<String, Object> kafkaTemplate, BettingHistoryRepository bettingHistoryRepository) {
+    public GamingService(KafkaTemplate<String, Object> kafkaTemplate, BettingHistoryRepository bettingHistoryRepository) {
         this.kafkaTemplate = kafkaTemplate;
         this.bettingHistoryRepository = bettingHistoryRepository;
     }
@@ -28,11 +27,11 @@ public class GamingKafkaService {
     public BettingTransferDTO bettingWinOrLose(BettingTransferDTO bettingTransferDTO) {
         Bet bet = new Bet(bettingTransferDTO.getPlayerId(), bettingTransferDTO.getBetAmount(), new Date());
         boolean roll = winOrLose.nextBoolean();
-        if (roll == true) {
+        if (roll) {
             bet.setBetWinAmount(bettingTransferDTO.getBetAmount() * 2);
             bettingTransferDTO.setBetAmount(bettingTransferDTO.getBetAmount() * 2);
         }
-        if (roll == false) {
+        if (!roll) {
             bet.setBetLoseAmount(-bettingTransferDTO.getBetAmount());
             bettingTransferDTO.setBetAmount(-bettingTransferDTO.getBetAmount());
         }

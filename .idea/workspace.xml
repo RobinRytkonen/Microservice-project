@@ -4,27 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;added mysql, liquibase, kafka and full crud in Playerservice and kafkalisteners&quot;">
-      <change afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/entity/Bet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/repository/BettingHistoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/liquibase/changelog-master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;added (temporary) betting win/lose in gaming service, updated player service and small name changes&quot;">
+      <change afterPath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/TransactionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/config/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingKafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingKafkaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingKafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingKafkaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingKafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingKafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/MoneyTransferDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/BettingTransferDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerKafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerKafkaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/PaymentAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/repository/TransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -135,8 +125,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LeoProjectGamingApplication" />
         <item itemvalue="Application.LeoProjectPlayerApplication" />
+        <item itemvalue="Application.LeoProjectGamingApplication" />
         <item itemvalue="Application.LeoProjectPaymentApplication" />
       </list>
     </recent_temporary>
@@ -171,12 +161,20 @@
       <option name="project" value="LOCAL" />
       <updated>1676277419281</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;added (temporary) betting win/lose in gaming service, updated player service and small name changes&quot;">
+      <created>1676458834623</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676458834623</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;commit&quot;" />
     <MESSAGE value="&quot;added Player entity&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;added Player entity&quot;" />
+    <MESSAGE value="&quot;added (temporary) betting win/lose in gaming service, updated player service and small name changes&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;added (temporary) betting win/lose in gaming service, updated player service and small name changes&quot;" />
   </component>
 </project>
