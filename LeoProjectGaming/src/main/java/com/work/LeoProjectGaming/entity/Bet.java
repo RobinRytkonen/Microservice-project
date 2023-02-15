@@ -35,9 +35,6 @@ public class Bet {
     @Column(name = "Date")
     private Date date;
 
-   /* @Column(name = "BetHistory")
-    private Collection<Bet> betHistory;*/
-
     public Bet(int playerId, double betAmount, Date date) {
         this.playerId = playerId;
         this.betAmount = betAmount;

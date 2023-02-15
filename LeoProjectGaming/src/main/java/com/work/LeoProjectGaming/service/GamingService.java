@@ -5,7 +5,6 @@ import com.work.LeoProjectGaming.repository.BettingHistoryRepository;
 import org.example.LeoProjectKafkaDTOS.BettingTransferDTO;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.Random;
 
@@ -14,7 +13,7 @@ import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
 @Service
 public class GamingService {
 
-    public Random winOrLose = new Random();
+    public static final Random winOrLose = new Random();
 
     private final KafkaTemplate<String, Object> kafkaTemplate;
     private final BettingHistoryRepository bettingHistoryRepository;
