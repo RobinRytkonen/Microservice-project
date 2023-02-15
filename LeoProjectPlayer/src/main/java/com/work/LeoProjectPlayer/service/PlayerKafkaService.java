@@ -4,7 +4,7 @@ import com.work.LeoProjectPlayer.entity.Player;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.LeoProjectKafkaDTOS.MoneyTransferDTO;
+import org.example.LeoProjectKafkaDTOS.BettingTransferDTO;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,14 +18,14 @@ public class PlayerKafkaService {
         this.playerRepository = playerRepository;
     }
 
-    public MoneyTransferDTO gamingMoneyTransfer(MoneyTransferDTO moneyTransferDTO) {
-        if (playerRepository.findById(moneyTransferDTO.getPlayerId()).isEmpty()) {
+    public BettingTransferDTO bettingMoneyTransfer(BettingTransferDTO bettingTransferDTO) {
+        if (playerRepository.findById(bettingTransferDTO.getPlayerId()).isEmpty()) {
             log.info("No registered player with that id!");
             return null;
         }
-        Player player = playerRepository.findById(moneyTransferDTO.getPlayerId()).get();
-        player.setGamingbalance(moneyTransferDTO.getGamingbalance() + player.getGamingbalance());
+        Player player = playerRepository.findById(bettingTransferDTO.getPlayerId()).get();
+        player.setBalance(bettingTransferDTO.getBetAmount() + player.getBalance());
         playerRepository.save(player);
-        return moneyTransferDTO;
+        return bettingTransferDTO;
     }
 }

@@ -60,8 +60,6 @@ G.idea/sonarlint/issuestore/5/8/58489903bd533ba86543838bc3310fdde540ec72,8/9/89
 w
 G.idea/sonarlint/issuestore/3/d/3df6b83d6b7fd8b2d6676b285a5dc97deab409b8,f/f/ff6f4b733d64ca3f58d96b0c7b600e98886876d7
 w
-G.idea/sonarlint/issuestore/1/b/1b06286c83409c2b6f0456d9608ca3a27c46e451,9/8/982c3498381321e4c357bc633d1e03073e10ab94
-w
 G.idea/sonarlint/issuestore/1/e/1eaab35b48f5aca041278b1836e8e45cf6be3563,b/1/b1361d237dc08243dc2c86cc6bd6db7c2a4b9593
 w
 G.idea/sonarlint/issuestore/1/5/1553e1a8d816a32dbd26cb2849bd3c939fdcacc3,2/6/26cfed12d24d749e6a449b878ad90392c298f748
@@ -83,3 +81,11 @@ I
 LeoProjectPayment/pom.xml,8/3/8365fc9b349295392c4f17b11392844014ecbc5d
 ‰
 YLeoProjectGaming/src/main/java/com/work/LeoProjectGaming/LeoProjectGamingApplication.java,4/a/4a763bfef0468e884002ae7024b3b5b7e4761278
+K
+LeoProjectKafkaDTOS/pom.xml,2/a/2ac5aa99913afeacf04a7603840fac9a9e426b82
+‰
+YLeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/repository/PlayerRepository.java,6/e/6ee2482a5c79fbcdc7f3b1d5ba3304fea9d1c832
+Œ
+\LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/repository/PaymentRepository.java,2/f/2f1c0d143e7bd1bcb6e1ec3781db88252218f461
+…
+ULeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/PaymentAccount.java,1/9/193babc61eac192fe59d5d1ef8ff9ddacd0c891d

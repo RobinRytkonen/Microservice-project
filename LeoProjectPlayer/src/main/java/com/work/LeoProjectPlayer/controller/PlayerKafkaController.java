@@ -1,13 +1,13 @@
 package com.work.LeoProjectPlayer.controller;
 
 import com.work.LeoProjectPlayer.service.PlayerKafkaService;
-import org.example.LeoProjectKafkaDTOS.MoneyTransferDTO;
+import org.example.LeoProjectKafkaDTOS.BettingTransferDTO;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.work.LeoProjectPlayer.util.Constants.GAMING_MONEY_TRANSFER_GROUP_ID;
-import static com.work.LeoProjectPlayer.util.Constants.GAMING_MONEY_TRANSFER_TOPIC;
+import static com.work.LeoProjectPlayer.util.Constants.BETTING_TRANSFER_GROUP_ID;
+import static com.work.LeoProjectPlayer.util.Constants.BETTING_TRANSFER_TOPIC;
 
 @Component
 @RestController
@@ -19,9 +19,9 @@ public class PlayerKafkaController {
         this.playerKafkaService = playerKafkaService;
     }
 
-    @KafkaListener(topics = GAMING_MONEY_TRANSFER_TOPIC, groupId = GAMING_MONEY_TRANSFER_GROUP_ID)
-    public MoneyTransferDTO gamingMoneyTransfer(MoneyTransferDTO moneyTransferDTO) {
-        return playerKafkaService.gamingMoneyTransfer(moneyTransferDTO);
+    @KafkaListener(topics = BETTING_TRANSFER_TOPIC, groupId = BETTING_TRANSFER_GROUP_ID)
+    public BettingTransferDTO bettingMoneyTransfer(BettingTransferDTO bettingTransferDTO) {
+        return playerKafkaService.bettingMoneyTransfer(bettingTransferDTO);
     }
 
 }

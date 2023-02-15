@@ -33,16 +33,16 @@ public class Player {
     @Column(name = "Country")
     private String country;
 
-    @Column(name = "Gaming balance")
-    private double gamingbalance;
+    @Column(name = "Balance")
+    private double balance;
 
-    public Player(String name, String lastName, String email, int phoneNumber, String location, String country, double gamingbalance) {
+    public Player(String name, String lastName, String email, int phoneNumber, String location, String country, double balance) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.location = location;
         this.country = country;
-        this.gamingbalance = gamingbalance;
+        this.balance = balance;
     }
 }

@@ -6,15 +6,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 
-import static com.work.LeoProjectGaming.util.Constants.GAMING_MONEY_TRANSFER_TOPIC;
+import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
 
 @Configuration
 public class KafkaConfig {
 
     @Bean
-    public NewTopic registerPlayerTopic() {
+    public NewTopic bettingTransferTopic() {
         return TopicBuilder
-                .name(GAMING_MONEY_TRANSFER_TOPIC)
+                .name(BETTING_TRANSFER_TOPIC)
                 .config(TopicConfig.RETENTION_MS_CONFIG, String.valueOf(10000))
                 .partitions(1)
                 .replicas(1)

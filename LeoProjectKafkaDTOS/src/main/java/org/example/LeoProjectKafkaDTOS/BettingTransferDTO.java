@@ -3,9 +3,9 @@ package org.example.LeoProjectKafkaDTOS;
 import lombok.Data;
 
 @Data
-public class MoneyTransferDTO {
+public class BettingTransferDTO {
 
     private int playerId;
-    private double gamingbalance;
+    private double betAmount;
 
 }

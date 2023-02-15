@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 import java.util.Optional;
 
+import static com.work.LeoProjectPlayer.util.Constants.NO_PLAYER_PRESENT;
+
 @Service
 public class PlayerService {
 
@@ -27,7 +29,7 @@ public class PlayerService {
 
     public Player getPlayer(PlayerDTO playerDTO) {
         if (playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).isEmpty()) {
-            log.info("No registered player with that name and email!");
+            log.info(NO_PLAYER_PRESENT);
             return null;
         }
         return playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).get();
@@ -35,7 +37,7 @@ public class PlayerService {
 
     public Player register(PlayerDTO playerDTO) {
         if (playerRepository.findByEmail(playerDTO.getEmail()).isPresent()) {
-            log.info("A player already registered with that email!");
+            log.info(NO_PLAYER_PRESENT);
             return null;
         }
         Player newPlayer = new Player(playerDTO.getName(),
@@ -52,7 +54,7 @@ public class PlayerService {
 
     public Player deletePlayer(PlayerDTO playerDTO) {
         if (playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).isEmpty()) {
-            log.info("No registered player with that name and email!");
+            log.info(NO_PLAYER_PRESENT);
             return null;
         }
         Player player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).get();

@@ -7,17 +7,16 @@
 
     <changeSet id="1" author="Robin Rytkönen">
         <comment>Add player_info table</comment>
-        <createTable tableName="Player">
+        <createTable tableName="Bet">
             <column name="Id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" primaryKeyName="playerId"/>
+                <constraints primaryKey="true" primaryKeyName="betId"/>
             </column>
-            <column name="Name" type="VARCHAR(255)"/>
-            <column name="Last name" type="VARCHAR(255)"/>
-            <column name="Email" type="VARCHAR(255)"/>
-            <column name="Phone number" type="VARCHAR(255)"/>
-            <column name="Location" type="VARCHAR(255)"/>
-            <column name="Country" type="VARCHAR(255)"/>
-            <column name="Balance" type="BIGINT"/>
+            <column name="Playerid" type="BIGINT"/>
+            <column name="Betamount" type="DECIMAL"/>
+            <column name="Betwinamount" type="DECIMAL"/>
+            <column name="BetloseAmount" type="DECIMAL"/>
+            <column name="Date" type="datetime"/>
+           <!-- <column name="BetHistory" type="VARCHAR(255)"/> -->
         </createTable>
     </changeSet>
 </databaseChangeLog>
