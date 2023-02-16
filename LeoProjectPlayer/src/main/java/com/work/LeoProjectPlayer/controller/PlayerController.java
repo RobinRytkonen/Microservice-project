@@ -22,7 +22,7 @@ public class PlayerController {
         return playerService.getAll();
     }
 
-    @GetMapping("/getone")
+    @GetMapping("/get_player")
     public Player getPlayer(@RequestBody PlayerDTO playerDTO) {
         return playerService.getPlayer(playerDTO);
     }
@@ -37,7 +37,7 @@ public class PlayerController {
         return playerService.deletePlayer(playerDTO);
     }
 
-    @PutMapping("/editPlayer")
+    @PutMapping("/edit_player")
     public Player editPlayer(@RequestBody PlayerDTO playerDTO) {
         return playerService.editPlayer(playerDTO);
     }

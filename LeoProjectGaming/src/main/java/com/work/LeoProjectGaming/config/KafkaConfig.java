@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 
 import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
+import static com.work.LeoProjectGaming.util.Constants.RETENTION_MS;
 
 @Configuration
 public class KafkaConfig {
@@ -15,7 +16,7 @@ public class KafkaConfig {
     public NewTopic bettingTransferTopic() {
         return TopicBuilder
                 .name(BETTING_TRANSFER_TOPIC)
-                .config(TopicConfig.RETENTION_MS_CONFIG, String.valueOf(10000))
+                .config(TopicConfig.RETENTION_MS_CONFIG, String.valueOf(RETENTION_MS))
                 .partitions(1)
                 .replicas(1)
                 .build();

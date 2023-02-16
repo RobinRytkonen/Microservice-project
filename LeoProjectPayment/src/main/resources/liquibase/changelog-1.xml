@@ -8,13 +8,13 @@
     <changeSet id="1" author="Robin Rytkönen">
         <comment>Add transaction_info table</comment>
         <createTable tableName="Transaction">
-            <column name="Id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" primaryKeyName="paymentId"/>
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="payment_id"/>
             </column>
-            <column name="Transaction_id" type="BIGINT"/>
-            <column name="Type" type="VARCHAR(255)"/>
-            <column name="Transaction_amount" type="DECIMAL"/>
-            <column name="Date" type="datetime"/>
+            <column name="transaction_id" type="BIGINT"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="transaction_amount" type="DECIMAL"/>
+            <column name="date" type="datetime"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

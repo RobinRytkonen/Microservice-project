@@ -5,7 +5,6 @@ import com.work.LeoProjectPlayer.entity.Player;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import java.util.Collection;
 import java.util.Optional;
@@ -48,7 +47,7 @@ public class PlayerService {
                 playerDTO.getCountry(),
                 playerDTO.getGamingbalance());
         playerRepository.save(newPlayer);
-        log.info(playerDTO);
+        log.info(newPlayer);
         return newPlayer;
     }
 
@@ -58,8 +57,7 @@ public class PlayerService {
             return null;
         }
         Player player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).get();
-        playerRepository.delete(player);
-        log.info("Sucessfully deleted: " + player);
+        log.info(player);
         return player;
     }
 
@@ -70,8 +68,13 @@ public class PlayerService {
             return null;
         }
         Player updatedPlayer = existing.get();
-        BeanUtils.copyProperties(playerDTO, updatedPlayer);
-        log.info("Successfully updated " + updatedPlayer);
+        updatedPlayer.setName(playerDTO.getName());
+        updatedPlayer.setLastName(playerDTO.getLastName());
+        updatedPlayer.setEmail(playerDTO.getEmail());
+        updatedPlayer.setPhoneNumber(playerDTO.getPhoneNumber());
+        updatedPlayer.setLocation(playerDTO.getLocation());
+        updatedPlayer.setCountry(playerDTO.getCountry());
+        log.info(updatedPlayer);
         return playerRepository.save(updatedPlayer);
     }
 }

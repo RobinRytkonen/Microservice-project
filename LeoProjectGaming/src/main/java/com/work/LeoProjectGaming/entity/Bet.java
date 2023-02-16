@@ -1,11 +1,14 @@
 package com.work.LeoProjectGaming.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import java.util.Collection;
 import java.util.Date;
 
 @Setter
@@ -17,22 +20,19 @@ public class Bet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Playerid")
+    @Column(name = "player_id")
     private int playerId;
 
-    @Column(name = "Betamount")
+    @Column(name = "bet_amount")
     private double betAmount;
 
-    @Column(name = "Betwinamount")
-    private double betWinAmount;
+    @Column(name = "win_amount")
+    private double winAmount;
 
-    @Column(name = "Betloseamount")
-    private double betLoseAmount;
-
-    @Column(name = "Date")
+    @Column(name = "date")
     private Date date;
 
     public Bet(int playerId, double betAmount, Date date) {

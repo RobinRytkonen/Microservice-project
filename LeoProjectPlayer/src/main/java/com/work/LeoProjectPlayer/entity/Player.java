@@ -19,28 +19,28 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "player_id")
     private int playerId;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Last name")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "Email")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "Phone number")
+    @Column(name = "phone_number")
     private int phoneNumber;
 
-    @Column(name = "Location")
+    @Column(name = "location")
     private String location;
 
-    @Column(name = "Country")
+    @Column(name = "country")
     private String country;
 
-    @Column(name = "Balance")
+    @Column(name = "balance")
     private double balance;
 
     public Player(String name, String lastName, String email, int phoneNumber, String location, String country, double balance) {

@@ -4,34 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;finished payment Service, sending transaction topic to player service and added listener in player service&quot;">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/1553e1a8d816a32dbd26cb2849bd3c939fdcacc3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1eaab35b48f5aca041278b1836e8e45cf6be3563" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3df6b83d6b7fd8b2d6676b285a5dc97deab409b8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/4351c8995682e257b1b97f3349672d7fa5475564" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/619d90c3eb471cfb1224034601c9ba7470988344" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/770a42cb0eed1213f06a28534eba6e98db05aa7f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/780fe9964669f4ee359c3a83cce9b499d40ada8f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b9fed740b83a8e5e7c04c7800d8a058921594dc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a4556f7b1ea9a76678c351b7dc82868869a1fd37" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/afc75c14dbb2a4d33ce797d8635a680b5889920d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b0d3d2343ca643280eae40285d37b91ad3704a65" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc4c363aad18b148ed3d58073a95e49276ac671e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cda9d89008df1a0d822aad77e22b1810b1e92475" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8ad6d2376528e56cd3ba42d913f0ae273caf564" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dd259a02bdc1059359da2b46c7d7501d869d614a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e01f14595ca03939a26381bedc625a587449ff9d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e26649d76ab1dd802b41d34399e163c370ffd61a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;ops&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/entity/Bet.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/entity/Bet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/BettingTransferDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/BettingTransferDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/util/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/util/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mircoservice-workspace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mircoservice-workspace.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676536548900</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&quot;deleted sonarlint file in workspace and added gitignore&quot;">
+      <created>1676544381757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676544381757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="&quot;ops&quot;">
+      <created>1676544636467</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676544636467</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -222,6 +231,8 @@
     <MESSAGE value="&quot;simplyfied betting, small rename changes&quot;" />
     <MESSAGE value="&quot;added transactionDTO for kafka, added topic builder in payment config and Transaction entity&quot;" />
     <MESSAGE value="&quot;finished payment Service, sending transaction topic to player service and added listener in player service&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;finished payment Service, sending transaction topic to player service and added listener in player service&quot;" />
+    <MESSAGE value="&quot;deleted sonarlint file in workspace and added gitignore&quot;" />
+    <MESSAGE value="&quot;ops&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;ops&quot;" />
   </component>
 </project>

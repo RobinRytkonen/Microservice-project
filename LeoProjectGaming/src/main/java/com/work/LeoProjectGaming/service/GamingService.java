@@ -13,8 +13,7 @@ import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
 @Service
 public class GamingService {
 
-    public static final Random winOrLose = new Random();
-
+    private final Random win = new Random();
     private final KafkaTemplate<String, Object> kafkaTemplate;
     private final BettingHistoryRepository bettingHistoryRepository;
 
@@ -23,19 +22,17 @@ public class GamingService {
         this.bettingHistoryRepository = bettingHistoryRepository;
     }
 
-    public BettingTransferDTO bettingWinOrLose(BettingTransferDTO bettingTransferDTO) {
-        Bet bet = new Bet(bettingTransferDTO.getPlayerId(), bettingTransferDTO.getBetAmount(), new Date());
-        boolean roll = winOrLose.nextBoolean();
-        if (roll) {
-            bet.setBetWinAmount(bettingTransferDTO.getBetAmount() * 2);
-            bettingTransferDTO.setBetAmount(bettingTransferDTO.getBetAmount() * 2);
-        }
-        if (!roll) {
-            bet.setBetLoseAmount(-bettingTransferDTO.getBetAmount());
-            bettingTransferDTO.setBetAmount(-bettingTransferDTO.getBetAmount());
+    public Bet bet(BettingTransferDTO dto) {
+        Bet bet = new Bet(dto.getPlayerId(), dto.getBetAmount(), new Date());
+        if (win.nextBoolean()) {
+            bet.setWinAmount(dto.getBetAmount() * win.nextInt(100));
+            dto.setWinAmount(bet.getWinAmount() - dto.getBetAmount());
+        } else {
+            bet.setWinAmount(0);
+            dto.setWinAmount(0 - dto.getBetAmount());
         }
         bettingHistoryRepository.save(bet);
-        kafkaTemplate.send(BETTING_TRANSFER_TOPIC, String.valueOf(bettingTransferDTO.getPlayerId()), bettingTransferDTO);
-        return bettingTransferDTO;
+        kafkaTemplate.send(BETTING_TRANSFER_TOPIC, String.valueOf(dto.getPlayerId()), dto);
+        return bet;
     }
 }

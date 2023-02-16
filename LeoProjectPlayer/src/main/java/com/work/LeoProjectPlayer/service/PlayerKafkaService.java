@@ -25,7 +25,7 @@ public class PlayerKafkaService {
             return null;
         }
         Player player = playerRepository.findById(bettingTransferDTO.getPlayerId()).get();
-        player.setBalance(bettingTransferDTO.getBetAmount() + player.getBalance());
+        player.setBalance(bettingTransferDTO.getWinAmount() + player.getBalance());
         playerRepository.save(player);
         return bettingTransferDTO;
     }

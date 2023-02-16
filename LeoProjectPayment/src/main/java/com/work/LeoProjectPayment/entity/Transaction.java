@@ -17,19 +17,19 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Transaction_id")
+    @Column(name = "transaction_id")
     private int transactionId;
 
-    @Column(name = "Type")
+    @Column(name = "type")
     private String type;
 
-    @Column(name = "Transaction_amount")
+    @Column(name = "transaction_amount")
     private int transactionAmount;
 
-    @Column(name = "Date")
+    @Column(name = "date")
     private Date date;
 
     public Transaction(int transactionId, String type, int transactionAmount, Date date) {

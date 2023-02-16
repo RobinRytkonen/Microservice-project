@@ -6,6 +6,9 @@ import lombok.Data;
 public class BettingTransferDTO {
 
     private int playerId;
+
     private double betAmount;
+
+    private double winAmount;
 
 }

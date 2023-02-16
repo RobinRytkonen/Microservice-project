@@ -8,15 +8,13 @@
     <changeSet id="1" author="Robin Rytkönen">
         <comment>Add gaming_info table</comment>
         <createTable tableName="Bet">
-            <column name="Id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" primaryKeyName="betId"/>
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="bet_id"/>
             </column>
-            <column name="Playerid" type="BIGINT"/>
-            <column name="Betamount" type="DECIMAL"/>
-            <column name="Betwinamount" type="DECIMAL"/>
-            <column name="BetloseAmount" type="DECIMAL"/>
-            <column name="Date" type="datetime"/>
-           <!-- <column name="BetHistory" type="VARCHAR(255)"/> -->
+            <column name="player_id" type="BIGINT"/>
+            <column name="bet_amount" type="DECIMAL"/>
+            <column name="win_amount" type="DECIMAL"/>
+            <column name="date" type="datetime"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
