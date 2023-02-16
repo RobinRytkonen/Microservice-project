@@ -6,7 +6,7 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
     <changeSet id="1" author="Robin Rytkönen">
-        <comment>Add player_info table</comment>
+        <comment>Add transaction_info table</comment>
         <createTable tableName="Transaction">
             <column name="Id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="paymentId"/>
