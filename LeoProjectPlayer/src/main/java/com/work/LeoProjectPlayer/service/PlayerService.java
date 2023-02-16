@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import java.util.Collection;
-import java.util.Optional;
 
 import static com.work.LeoProjectPlayer.util.Constants.NO_PLAYER_PRESENT;
 
@@ -62,12 +61,11 @@ public class PlayerService {
     }
 
     public Player editPlayer(PlayerDTO playerDTO) {
-        Optional<Player> existing = playerRepository.findById(playerDTO.getPlayerId());
-        if (existing.isEmpty()) {
-            log.info("No registered player with that name and email!");
+        if (playerRepository.findById(playerDTO.getPlayerId()).isEmpty()) {
+            log.info("No registered player with that id!");
             return null;
         }
-        Player updatedPlayer = existing.get();
+        Player updatedPlayer = playerRepository.findById(playerDTO.getPlayerId()).get();
         updatedPlayer.setName(playerDTO.getName());
         updatedPlayer.setLastName(playerDTO.getLastName());
         updatedPlayer.setEmail(playerDTO.getEmail());

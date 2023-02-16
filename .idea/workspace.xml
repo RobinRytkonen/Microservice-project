@@ -4,29 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;ops&quot;">
+    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;small fixes across the board with some naming conventions, updated betting logic(will be updated more)&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/config/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/entity/Bet.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/entity/Bet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/BettingTransferDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/BettingTransferDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/config/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676544636467</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="&quot;small fixes across the board with some naming conventions, updated betting logic(will be updated more)&quot;">
+      <created>1676556100134</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676556100134</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -233,6 +220,7 @@
     <MESSAGE value="&quot;finished payment Service, sending transaction topic to player service and added listener in player service&quot;" />
     <MESSAGE value="&quot;deleted sonarlint file in workspace and added gitignore&quot;" />
     <MESSAGE value="&quot;ops&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;ops&quot;" />
+    <MESSAGE value="&quot;small fixes across the board with some naming conventions, updated betting logic(will be updated more)&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;small fixes across the board with some naming conventions, updated betting logic(will be updated more)&quot;" />
   </component>
 </project>
