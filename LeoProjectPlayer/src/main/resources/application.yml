@@ -19,6 +19,6 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/player_service
     username: root
-    password: password
+    password:
 
 
