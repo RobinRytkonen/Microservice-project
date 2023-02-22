@@ -3,6 +3,7 @@ package com.work.LeoProjectPlayer.service;
 import com.work.LeoProjectPlayer.dtos.PlayerDTO;
 import com.work.LeoProjectPlayer.entity.Player;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
+import java.util.Optional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -26,46 +27,49 @@ public class PlayerService {
     }
 
     public Player getPlayer(PlayerDTO playerDTO) {
-        if (playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).isEmpty()) {
+        Optional<Player> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
+        if (player.isEmpty()) {
             log.info(NO_PLAYER_PRESENT);
             return null;
         }
-        return playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).get();
+        return player.get();
     }
 
     public Player register(PlayerDTO playerDTO) {
-        if (playerRepository.findByEmail(playerDTO.getEmail()).isPresent()) {
-            log.info(NO_PLAYER_PRESENT);
-            return null;
+        Optional<Player> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
+        if (player.isEmpty()) {
+            Player newPlayer = new Player(
+                    playerDTO.getName(),
+                    playerDTO.getLastName(),
+                    playerDTO.getEmail(),
+                    playerDTO.getPhoneNumber(),
+                    playerDTO.getLocation(),
+                    playerDTO.getCountry(),
+                    playerDTO.getBalance());
+            playerRepository.save(newPlayer);
+            log.info(newPlayer);
+            return newPlayer;
         }
-        Player newPlayer = new Player(playerDTO.getName(),
-                playerDTO.getLastName(),
-                playerDTO.getEmail(),
-                playerDTO.getPhoneNumber(),
-                playerDTO.getLocation(),
-                playerDTO.getCountry(),
-                playerDTO.getGamingbalance());
-        playerRepository.save(newPlayer);
-        log.info(newPlayer);
-        return newPlayer;
+        log.info("Player with that name or email already registered!");
+        return null;
     }
 
-    public Player deletePlayer(PlayerDTO playerDTO) {
-        if (playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).isEmpty()) {
+    public void deletePlayer(PlayerDTO playerDTO) {
+        Optional<Player> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
+        if (player.isEmpty()) {
             log.info(NO_PLAYER_PRESENT);
-            return null;
         }
-        Player player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail()).get();
+        playerRepository.delete(player.get());
         log.info(player);
-        return player;
     }
 
     public Player editPlayer(PlayerDTO playerDTO) {
-        if (playerRepository.findById(playerDTO.getPlayerId()).isEmpty()) {
+        Optional<Player> player = playerRepository.findById(playerDTO.getPlayerId());
+        if (player.isEmpty()) {
             log.info("No registered player with that id!");
             return null;
         }
-        Player updatedPlayer = playerRepository.findById(playerDTO.getPlayerId()).get();
+        Player updatedPlayer = player.get();
         updatedPlayer.setName(playerDTO.getName());
         updatedPlayer.setLastName(playerDTO.getLastName());
         updatedPlayer.setEmail(playerDTO.getEmail());

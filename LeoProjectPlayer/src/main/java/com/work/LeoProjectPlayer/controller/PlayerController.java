@@ -33,8 +33,8 @@ public class PlayerController {
     }
 
     @DeleteMapping("/delete")
-    public Player deletePlayer(@RequestBody PlayerDTO playerDTO) {
-        return playerService.deletePlayer(playerDTO);
+    public void deletePlayer(@RequestBody PlayerDTO playerDTO) {
+        playerService.deletePlayer(playerDTO);
     }
 
     @PutMapping("/edit_player")

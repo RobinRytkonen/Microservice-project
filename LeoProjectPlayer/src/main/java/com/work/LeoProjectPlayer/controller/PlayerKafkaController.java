@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import static com.work.LeoProjectPlayer.util.Constants.*;
 
 @Component
-@RestController
 public class PlayerKafkaController {
 
     private final PlayerKafkaService playerKafkaService;
