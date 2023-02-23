@@ -24,19 +24,16 @@ import static org.mockito.Mockito.times;
 @ExtendWith(MockitoExtension.class)
 class GamingServiceTests {
 
+    @Mock
     BettingHistoryRepository bettingHistoryRepository;
+    @Mock
     KafkaTemplate<String, Object> kafkaTemplate;
+
+    @InjectMocks
     GamingService gamingService;
 
     @Captor
     ArgumentCaptor<Bet> playerArgumentCaptor;
-
-    @BeforeEach
-    void init() {
-        kafkaTemplate = Mockito.mock(KafkaTemplate.class);
-        bettingHistoryRepository = Mockito.mock(BettingHistoryRepository.class);
-        gamingService = new GamingService(kafkaTemplate, bettingHistoryRepository);
-    }
 
     @Test
     void should_save_bet() {
