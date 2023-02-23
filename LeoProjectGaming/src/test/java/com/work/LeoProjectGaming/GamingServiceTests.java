@@ -1,58 +1,42 @@
-/*package com.work.LeoProjectGaming;
+package com.work.LeoProjectGaming;
 
 import com.work.LeoProjectGaming.entity.Bet;
 import com.work.LeoProjectGaming.repository.BettingHistoryRepository;
 import com.work.LeoProjectGaming.service.GamingService;
 import com.work.LeoProjectGaming.util.RandomUtil;
 import java.util.Date;
-import java.util.Random;
 import org.example.LeoProjectKafkaDTOS.BettingTransferDTO;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
-//import org.junit.runner.RunWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-//import org.powermock.modules.junit4.PowerMockRunner;
-import org.powermock.modules.testng.PowerMockTestCase;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.testng.IObjectFactory;
-import org.testng.annotations.ObjectFactory;
 
 import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
-
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.times;
 
 @ExtendWith(MockitoExtension.class)
-//@RunWith(PowerMockRunner.class)
-//todo fix static Mocks
-@PrepareForTest(RandomUtil.class)
-class GamingServiceTests extends PowerMockTestCase {
+class GamingServiceTests {
 
-    @Mock
-    //@InjectMocks
     BettingHistoryRepository bettingHistoryRepository;
-
-    @Mock
-   //@InjectMocks
     KafkaTemplate<String, Object> kafkaTemplate;
-
-  //  @Mock
-   // RandomUtil randomUtil;
-
-    //@Mock
-   // GamingService gamingService = new GamingService(kafkaTemplate, bettingHistoryRepository);
-
-    @InjectMocks
-    GamingService gamingService = new GamingService(kafkaTemplate, bettingHistoryRepository);
+    GamingService gamingService;
 
     @Captor
     ArgumentCaptor<Bet> playerArgumentCaptor;
 
+    @BeforeEach
+    void init() {
+        kafkaTemplate = Mockito.mock(KafkaTemplate.class);
+        bettingHistoryRepository = Mockito.mock(BettingHistoryRepository.class);
+        gamingService = new GamingService(kafkaTemplate, bettingHistoryRepository);
+    }
 
     @Test
     void should_save_bet() {
@@ -75,19 +59,14 @@ class GamingServiceTests extends PowerMockTestCase {
         BettingTransferDTO dto = new BettingTransferDTO(1, 100);
         Bet bet = new Bet(dto.getPlayerId(), dto.getBetAmount(), new Date());
 
-        PowerMockito.mockStatic(RandomUtil.class);
-
-        when(RandomUtil.getRandomBoolean()).thenReturn(false);
-        when(RandomUtil.getRandomInteger()).thenReturn(2);
+        mockStatic(RandomUtil.class);
+        var mockRandomInstant = Mockito.mock(RandomUtil.class);
+        when(mockRandomInstant.getRandomBoolean()).thenReturn(false);
+        when(mockRandomInstant.getRandomInteger()).thenReturn(2);
 
         gamingService.play(dto, bet);
 
         assertEquals(-100, dto.getWinAmount());
         assertEquals(0, bet.getWinAmount());
     }
-
-    @ObjectFactory
-    public IObjectFactory getObjectFactory() {
-        return new org.powermock.modules.testng.PowerMockObjectFactory();
-    }
-}*/
+}
