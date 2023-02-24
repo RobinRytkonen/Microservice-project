@@ -22,9 +22,9 @@ public class PlayerController {
         return playerService.getAll();
     }
 
-    @GetMapping("/get_player")
-    public Player getPlayer(@RequestBody PlayerDTO playerDTO) {
-        return playerService.getPlayer(playerDTO);
+    @GetMapping("/get_player/{id}")
+    public Player getPlayer(@PathVariable int id) {
+        return playerService.getPlayer(id);
     }
 
     @PostMapping("/register")

@@ -26,6 +26,7 @@ class GamingServiceTests {
 
     @Mock
     BettingHistoryRepository bettingHistoryRepository;
+
     @Mock
     KafkaTemplate<String, Object> kafkaTemplate;
 
@@ -36,12 +37,10 @@ class GamingServiceTests {
     ArgumentCaptor<Bet> playerArgumentCaptor;
 
     @Test
-    void should_save_bet() {
+    void should_send_topic_and_save_bet() {
         BettingTransferDTO dto = new BettingTransferDTO(1, 100);
-        Bet bet = new Bet(dto.getPlayerId(), dto.getBetAmount(), new Date());
 
         when(kafkaTemplate.send(BETTING_TRANSFER_TOPIC, String.valueOf(dto.getPlayerId()), dto)).thenReturn(null);
-        when(bettingHistoryRepository.save(any(Bet.class))).thenReturn(bet);
 
         gamingService.bet(dto);
 

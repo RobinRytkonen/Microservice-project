@@ -25,7 +25,6 @@ class PlayerServiceTests {
     Player player3 = new Player("Robin2", "Rytkönen2", "Bobzoor@gmail.com2", 988765, "Vetlanda", "Sweden", 0);
     PlayerDTO dto = new PlayerDTO("Robin", "Rytkönen", "Bobzoor@gmail.com", 988765, "Vetlanda", "Sweden", 0);
     PlayerDTO dto2 = new PlayerDTO("Robin4", "Rytkönen4", "Bobzoor@gmail.com4", 9887654, "Vetlanda4", "Sweden4", 0);
-    PlayerDTO registerDTO = new PlayerDTO("Robin5", "Rytkönen4", "Bobzoor@gmail.com5", 9887654, "Vetlanda4", "Sweden4", 0);
 
     @Mock
     PlayerRepository playerRepository;
@@ -50,25 +49,25 @@ class PlayerServiceTests {
     @Test
     void should_return_player() {
 
-        when(playerRepository.findByNameAndEmail("Robin", "Bobzoor@gmail.com")).thenReturn(Optional.of(player1));
+        when(playerRepository.findById(1)).thenReturn(Optional.of(player1));
 
-        playerService.getPlayer(dto);
+        playerService.getPlayer(1);
 
         Assertions.assertEquals(player1.getName(), dto.getName());
         Assertions.assertEquals(player1.getEmail(), dto.getEmail());
-        verify(playerRepository, times(1)).findByNameAndEmail("Robin", "Bobzoor@gmail.com");
+        verify(playerRepository, times(1)).findById(1);
 
     }
 
     @Test
     void should_not_return_player() {
 
-        when(playerRepository.findByNameAndEmail(anyString(), anyString())).thenReturn(Optional.empty());
+        when(playerRepository.findById(anyInt())).thenReturn(Optional.empty());
 
-        var player = playerService.getPlayer(dto);
+        var player = playerService.getPlayer(1);
 
         Assertions.assertNull(player);
-        verify(playerRepository, times(1)).findByNameAndEmail(anyString(), anyString());
+        verify(playerRepository, times(1)).findById(anyInt());
     }
 
     @Test

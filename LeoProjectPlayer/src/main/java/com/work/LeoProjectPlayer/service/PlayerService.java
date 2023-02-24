@@ -26,8 +26,8 @@ public class PlayerService {
         return playerRepository.findAll();
     }
 
-    public Player getPlayer(PlayerDTO playerDTO) {
-        Optional<Player> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
+    public Player getPlayer(int id) {
+        Optional<Player> player = playerRepository.findById(id);
         if (player.isEmpty()) {
             log.info(NO_PLAYER_PRESENT);
             return null;
