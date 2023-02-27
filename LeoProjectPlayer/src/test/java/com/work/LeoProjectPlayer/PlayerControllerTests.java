@@ -1,30 +1,33 @@
 package com.work.LeoProjectPlayer;
 
+import com.google.gson.Gson;
+import com.work.LeoProjectPlayer.entity.Player;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.web.servlet.MockMvc;
+import java.util.List;
 
-import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.BEFORE_TEST_METHOD;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static com.work.LeoProjectPlayer.TestConstants.LIST_OF_PLAYERS;
+import static com.work.LeoProjectPlayer.TestConstants.PLAYER_EDIT_DTO;
+import static com.work.LeoProjectPlayer.TestConstants.PLAYER_CREATE_DTO;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource("/application-test.yml")
 @ActiveProfiles("test")
-@SqlGroup({
-        @Sql(value = "classpath:reset-data.sql", executionPhase = BEFORE_TEST_METHOD),
-        @Sql(value = "classpath:initialize-data.sql", executionPhase = BEFORE_TEST_METHOD)
-})
 @AutoConfigureMockMvc
 class PlayerControllerTests {
 
@@ -34,10 +37,23 @@ class PlayerControllerTests {
     @Autowired
     PlayerRepository playerRepository;
 
-    @Test
-    void should_return_empty_list() throws Exception {
+    List<Player> currentPlayers;
 
-        String response = "[{\"playerId\":1,\"name\":\"Robin\",\"lastName\":\"RytkÃ¶nen\",\"email\":\"Bobzoor@gmail.com\",\"phoneNumber\":988765,\"location\":\"Vetlanda\",\"country\":\"Sweden\",\"balance\":0.0}]";
+    @BeforeEach
+    void init() {
+        currentPlayers = playerRepository.saveAll(LIST_OF_PLAYERS);
+    }
+
+    @AfterEach
+    void cleanUp() {
+        playerRepository.deleteAll();
+    }
+
+    @Test
+    void should_return_list_of_players() throws Exception {
+
+        Gson gson = new Gson();
+        String response = gson.toJson(playerRepository.findAll());
 
         this.mvc
                 .perform(get("/player/all").accept(MediaType.APPLICATION_JSON))
@@ -49,10 +65,12 @@ class PlayerControllerTests {
     @Test
     void should_return_player() throws Exception {
 
-        String response = "{\"playerId\":1,\"name\":\"Robin\",\"lastName\":\"RytkÃ¶nen\",\"email\":\"Bobzoor@gmail.com\",\"phoneNumber\":988765,\"location\":\"Vetlanda\",\"country\":\"Sweden\",\"balance\":0.0}";
+        Player player =  currentPlayers.get(0);
+        Gson gson = new Gson();
+        String response = gson.toJson(currentPlayers.get(0));
 
         this.mvc
-                .perform(get("/player/get_player/{id}", 1).accept(MediaType.APPLICATION_JSON))
+                .perform(get("/player/get_player/{id}", player.getPlayerId()).accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(response));
@@ -61,10 +79,26 @@ class PlayerControllerTests {
     @Test
     void should_save_player() throws Exception {
 
-        String player = "{\"name\":\"Robin2\",\"lastName\":\"Rytkönen\",\"email\":\"bobzoor@gmail.com2\",\"phoneNumber\":\"123456789\",\"location\":\"Vetlanda\",\"country\":\"Sweden\",\"balance\":0}";
+        Gson gson = new Gson();
+        String requestDTO = gson.toJson(PLAYER_CREATE_DTO);
 
         this.mvc
-                .perform(post("/player/register").contentType(MediaType.APPLICATION_JSON_VALUE).content(player))
+                .perform(post("/player/register").contentType(MediaType.APPLICATION_JSON_VALUE).content(requestDTO))
+                .andDo(print())
+                .andExpect(status().isOk());
+
+        Assertions.assertEquals(4, playerRepository.findAll().size());
+    }
+
+    @Test
+    void should_delete_player() throws Exception {
+
+        Player player = currentPlayers.get(0);
+        Gson gson = new Gson();
+        String requestDTO = gson.toJson(player);
+
+        this.mvc
+                .perform(delete("/player/delete").contentType(MediaType.APPLICATION_JSON_VALUE).content(requestDTO))
                 .andDo(print())
                 .andExpect(status().isOk());
 
@@ -72,27 +106,14 @@ class PlayerControllerTests {
     }
 
     @Test
-    void should_delete_player() throws Exception {
-
-        String response = "{\"playerId\":1,\"name\":\"Robin\",\"lastName\":\"RytkÃ¶nen\",\"email\":\"Bobzoor@gmail.com\",\"phoneNumber\":988765,\"location\":\"Vetlanda\",\"country\":\"Sweden\",\"balance\":0.0}";
-
-        this.mvc
-                .perform(delete("/player/delete").contentType(MediaType.APPLICATION_JSON_VALUE).content(response))
-                .andDo(print())
-                .andExpect(status().isOk());
-
-        Assertions.assertEquals(0, playerRepository.findAll().size());
-    }
-
-    @Test
     void should_edit_player() throws Exception {
 
-        String edit = "{\"playerId\":1,\"name\":\"Robin2\",\"lastName\":\"RytkÃ¶nen2\",\"email\":\"Bobzoor@gmail.com\",\"phoneNumber\":988765,\"location\":\"Vetlanda\",\"country\":\"Sweden\",\"balance\":0.0}";
+        Gson gson = new Gson();
+        String requestDTO = gson.toJson(PLAYER_EDIT_DTO);
 
         this.mvc
-                .perform(put("/player/edit_player").contentType(MediaType.APPLICATION_JSON_VALUE).content(edit))
+                .perform(put("/player/edit_player").contentType(MediaType.APPLICATION_JSON_VALUE).content(requestDTO))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
-
 }

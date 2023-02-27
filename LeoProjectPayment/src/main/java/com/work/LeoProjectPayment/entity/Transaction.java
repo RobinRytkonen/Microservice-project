@@ -1,8 +1,15 @@
 package com.work.LeoProjectPayment.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
-
+import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Column;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import java.util.Date;
 
 @Setter

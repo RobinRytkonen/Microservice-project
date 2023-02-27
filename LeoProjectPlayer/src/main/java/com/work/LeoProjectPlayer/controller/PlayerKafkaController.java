@@ -6,7 +6,9 @@ import org.example.LeoProjectKafkaDTOS.TransactionDTO;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import static com.work.LeoProjectPlayer.util.Constants.*;
+import static com.work.LeoProjectPlayer.util.Constants.TRANSACTION_TOPIC;
+import static com.work.LeoProjectPlayer.util.Constants.BETTING_TRANSFER_TOPIC;
+import static com.work.LeoProjectPlayer.util.Constants.MICROSERVICE_PROJECT_GROUP_ID;
 
 @Component
 public class PlayerKafkaController {
@@ -26,5 +28,4 @@ public class PlayerKafkaController {
     public TransactionDTO paymentTransaction(TransactionDTO transactionDTO) {
         return playerKafkaService.paymentTransaction(transactionDTO);
     }
-
 }

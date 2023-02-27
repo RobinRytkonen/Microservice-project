@@ -5,20 +5,22 @@ import com.work.LeoProjectGaming.repository.BettingHistoryRepository;
 import com.work.LeoProjectGaming.service.GamingService;
 import com.work.LeoProjectGaming.util.RandomUtil;
 import java.util.Date;
-import org.example.LeoProjectKafkaDTOS.BettingTransferDTO;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.*;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
+import org.mockito.Captor;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.kafka.core.KafkaTemplate;
 
+import static com.work.LeoProjectGaming.TestConstants.BETTING_TRANSFER_DTO;
 import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.times;
 
 @ExtendWith(MockitoExtension.class)
@@ -38,13 +40,11 @@ class GamingServiceTests {
 
     @Test
     void should_send_topic_and_save_bet() {
-        BettingTransferDTO dto = new BettingTransferDTO(1, 100);
+        when(kafkaTemplate.send(BETTING_TRANSFER_TOPIC, String.valueOf(BETTING_TRANSFER_DTO.getPlayerId()), BETTING_TRANSFER_DTO)).thenReturn(null);
 
-        when(kafkaTemplate.send(BETTING_TRANSFER_TOPIC, String.valueOf(dto.getPlayerId()), dto)).thenReturn(null);
+        gamingService.bet(BETTING_TRANSFER_DTO);
 
-        gamingService.bet(dto);
-
-        verify(kafkaTemplate, times(1)).send(BETTING_TRANSFER_TOPIC, String.valueOf(dto.getPlayerId()), dto);
+        verify(kafkaTemplate, times(1)).send(BETTING_TRANSFER_TOPIC, String.valueOf(BETTING_TRANSFER_DTO.getPlayerId()), BETTING_TRANSFER_DTO);
         verify(bettingHistoryRepository, times(1)).save(playerArgumentCaptor.capture());
         assertEquals(1, playerArgumentCaptor.getValue().getPlayerId());
         assertEquals(100, playerArgumentCaptor.getValue().getBetAmount());
@@ -52,17 +52,16 @@ class GamingServiceTests {
 
     @Test
     void test_play_method_should_return_right_amount() {
-        BettingTransferDTO dto = new BettingTransferDTO(1, 100);
-        Bet bet = new Bet(dto.getPlayerId(), dto.getBetAmount(), new Date());
+        Bet bet = new Bet(BETTING_TRANSFER_DTO.getPlayerId(), BETTING_TRANSFER_DTO.getBetAmount(), new Date());
 
         mockStatic(RandomUtil.class);
-        var mockRandomInstant = Mockito.mock(RandomUtil.class);
-        when(mockRandomInstant.getRandomBoolean()).thenReturn(false);
-        when(mockRandomInstant.getRandomInteger()).thenReturn(2);
+        Mockito.mock(RandomUtil.class);
+        when(RandomUtil.getRandomBoolean()).thenReturn(false);
+        when(RandomUtil.getRandomInteger()).thenReturn(2);
 
-        gamingService.play(dto, bet);
+        gamingService.play(BETTING_TRANSFER_DTO, bet);
 
-        assertEquals(-100, dto.getWinAmount());
+        assertEquals(-100, BETTING_TRANSFER_DTO.getWinAmount());
         assertEquals(0, bet.getWinAmount());
     }
 }

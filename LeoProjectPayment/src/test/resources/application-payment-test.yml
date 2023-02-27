@@ -4,12 +4,8 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password: as
-    initialization-mode: always
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: true
   h2:
     console:
-      enabled: true.hibernate.dialect.H2Dialect
+      enabled: true
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect

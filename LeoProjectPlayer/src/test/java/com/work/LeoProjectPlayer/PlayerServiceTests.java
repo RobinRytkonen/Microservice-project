@@ -1,10 +1,8 @@
 package com.work.LeoProjectPlayer;
 
-import com.work.LeoProjectPlayer.dtos.PlayerDTO;
 import com.work.LeoProjectPlayer.entity.Player;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import com.work.LeoProjectPlayer.service.PlayerService;
-import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,16 +13,18 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.mockito.Mockito.*;
+import static com.work.LeoProjectPlayer.TestConstants.LIST_OF_PLAYERS;
+import static com.work.LeoProjectPlayer.TestConstants.PLAYER_DTO;
+import static com.work.LeoProjectPlayer.TestConstants.PLAYER_EDIT_DTO;
+import static com.work.LeoProjectPlayer.TestConstants.PLAYER;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.anyInt;
 
 @ExtendWith(MockitoExtension.class)
 class PlayerServiceTests {
-
-    Player player1 = new Player("Robin", "Rytkönen", "Bobzoor@gmail.com", 988765, "Vetlanda", "Sweden", 0);
-    Player player2 = new Player("Robin1", "Rytkönen1", "Bobzoor@gmail.com1", 988765, "Vetlanda", "Sweden", 0);
-    Player player3 = new Player("Robin2", "Rytkönen2", "Bobzoor@gmail.com2", 988765, "Vetlanda", "Sweden", 0);
-    PlayerDTO dto = new PlayerDTO("Robin", "Rytkönen", "Bobzoor@gmail.com", 988765, "Vetlanda", "Sweden", 0);
-    PlayerDTO dto2 = new PlayerDTO("Robin4", "Rytkönen4", "Bobzoor@gmail.com4", 9887654, "Vetlanda4", "Sweden4", 0);
 
     @Mock
     PlayerRepository playerRepository;
@@ -38,24 +38,24 @@ class PlayerServiceTests {
     @Test
     void should_return_list_of_players() {
 
-        when(playerRepository.findAll()).thenReturn(List.of(player1, player2, player3));
+        when(playerRepository.findAll()).thenReturn(LIST_OF_PLAYERS);
 
         var players = playerService.getAll();
 
-        Assertions.assertEquals(3, players.size());
-        Assertions.assertTrue(players.containsAll(List.of(player1, player2, player3)));
+        Assertions.assertEquals(LIST_OF_PLAYERS.size(), players.size());
+        Assertions.assertTrue(players.containsAll(LIST_OF_PLAYERS));
     }
 
     @Test
     void should_return_player() {
 
-        when(playerRepository.findById(1)).thenReturn(Optional.of(player1));
+        when(playerRepository.findById(PLAYER_DTO.getPlayerId())).thenReturn(Optional.of(PLAYER));
 
-        playerService.getPlayer(1);
+        playerService.getPlayer(PLAYER_DTO.getPlayerId());
 
-        Assertions.assertEquals(player1.getName(), dto.getName());
-        Assertions.assertEquals(player1.getEmail(), dto.getEmail());
-        verify(playerRepository, times(1)).findById(1);
+        Assertions.assertEquals(PLAYER.getName(), PLAYER_DTO.getName());
+        Assertions.assertEquals(PLAYER.getEmail(), PLAYER_DTO.getEmail());
+        verify(playerRepository, times(1)).findById(PLAYER_DTO.getPlayerId());
 
     }
 
@@ -64,7 +64,7 @@ class PlayerServiceTests {
 
         when(playerRepository.findById(anyInt())).thenReturn(Optional.empty());
 
-        var player = playerService.getPlayer(1);
+        var player = playerService.getPlayer(PLAYER_DTO.getPlayerId());
 
         Assertions.assertNull(player);
         verify(playerRepository, times(1)).findById(anyInt());
@@ -73,53 +73,53 @@ class PlayerServiceTests {
     @Test
     void should_save_player() {
 
-        when(playerRepository.findByNameAndEmail(dto.getName(), dto.getEmail())).thenReturn(Optional.empty());
+        when(playerRepository.findByNameAndEmail(PLAYER_DTO.getName(), PLAYER_DTO.getEmail())).thenReturn(Optional.empty());
 
-        playerService.register(dto);
+        playerService.register(PLAYER_DTO);
 
-        verify(playerRepository, times(1)).findByNameAndEmail("Robin", "Bobzoor@gmail.com");
+        verify(playerRepository, times(1)).findByNameAndEmail(PLAYER.getName(), PLAYER.getEmail());
         verify(playerRepository, times(1)).save(playerArgumentCaptor.capture());
-        Assertions.assertEquals("Robin", playerArgumentCaptor.getValue().getName());
-        Assertions.assertEquals("Bobzoor@gmail.com", playerArgumentCaptor.getValue().getEmail());
+        Assertions.assertEquals(PLAYER.getName(), playerArgumentCaptor.getValue().getName());
+        Assertions.assertEquals(PLAYER.getEmail(), playerArgumentCaptor.getValue().getEmail());
     }
 
     @Test
     void should_not_save_player() {
 
-        when(playerRepository.findByNameAndEmail(dto.getName(), dto.getEmail())).thenReturn(Optional.of(player1));
+        when(playerRepository.findByNameAndEmail(PLAYER_DTO.getName(), PLAYER_DTO.getEmail())).thenReturn(Optional.of(PLAYER));
 
-        playerService.register(dto);
+        playerService.register(PLAYER_DTO);
 
-        verify(playerRepository, times(1)).findByNameAndEmail(dto.getName(), dto.getEmail());
+        verify(playerRepository, times(1)).findByNameAndEmail(PLAYER_DTO.getName(), PLAYER_DTO.getEmail());
         verify(playerRepository, times(0)).save(any());
     }
 
     @Test
     void should_delete_player() {
 
-        when(playerRepository.findByNameAndEmail("Robin", "Bobzoor@gmail.com")).thenReturn(Optional.of(player1));
+        when(playerRepository.findByNameAndEmail(PLAYER.getName(), PLAYER.getEmail())).thenReturn(Optional.of(PLAYER));
 
-        playerService.deletePlayer(dto);
+        playerService.deletePlayer(PLAYER_DTO);
 
-        verify(playerRepository, times(1)).delete(player1);
-        verify(playerRepository, times(1)).findByNameAndEmail("Robin", "Bobzoor@gmail.com");
+        verify(playerRepository, times(1)).delete(PLAYER);
+        verify(playerRepository, times(1)).findByNameAndEmail(PLAYER.getName(), PLAYER.getEmail());
     }
 
     @Test
     void should_update_player() {
 
-        when(playerRepository.findById(dto2.getPlayerId())).thenReturn(Optional.of(player1));
+        when(playerRepository.findById(PLAYER_EDIT_DTO.getPlayerId())).thenReturn(Optional.of(PLAYER));
 
-        playerService.editPlayer(dto2);
+        playerService.editPlayer(PLAYER_EDIT_DTO);
 
-        verify(playerRepository,times(1)).findById(dto2.getPlayerId());
+        verify(playerRepository,times(1)).findById(PLAYER_EDIT_DTO.getPlayerId());
         verify(playerRepository, times(1)).save(playerArgumentCaptor.capture());
-        Assertions.assertEquals("Robin4", playerArgumentCaptor.getValue().getName());
-        Assertions.assertEquals("Rytkönen4", playerArgumentCaptor.getValue().getLastName());
-        Assertions.assertEquals("Bobzoor@gmail.com4", playerArgumentCaptor.getValue().getEmail());
-        Assertions.assertEquals(9887654, playerArgumentCaptor.getValue().getPhoneNumber());
-        Assertions.assertEquals("Vetlanda4", playerArgumentCaptor.getValue().getLocation());
-        Assertions.assertEquals("Sweden4", playerArgumentCaptor.getValue().getCountry());
+        Assertions.assertEquals(PLAYER_EDIT_DTO.getName(), playerArgumentCaptor.getValue().getName());
+        Assertions.assertEquals(PLAYER_EDIT_DTO.getLastName(), playerArgumentCaptor.getValue().getLastName());
+        Assertions.assertEquals(PLAYER_EDIT_DTO.getEmail(), playerArgumentCaptor.getValue().getEmail());
+        Assertions.assertEquals(PLAYER_EDIT_DTO.getPhoneNumber(), playerArgumentCaptor.getValue().getPhoneNumber());
+        Assertions.assertEquals(PLAYER_EDIT_DTO.getLocation(), playerArgumentCaptor.getValue().getLocation());
+        Assertions.assertEquals(PLAYER_EDIT_DTO.getCountry(), playerArgumentCaptor.getValue().getCountry());
 
 
     }
