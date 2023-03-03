@@ -1,41 +1,57 @@
 package com.work.LeoProjectPlayer.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.context.annotation.ComponentScan;
+import lombok.ToString;
 
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "playerId")
-    private int playerId;
+    @Column(name = "player_id")
+    private Integer playerId;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "Last name")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "Email")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "Phone number")
-    private int phoneNumber;
+    @Column(name = "phone_number")
+    private Integer phoneNumber;
 
-    @Column(name = "Location")
+    @Column(name = "location")
     private String location;
 
-    @Column(name = "Country")
+    @Column(name = "country")
     private String country;
 
-    @Column(name = "GamingBalance")
-    private double gamingbalance;
+    @Column(name = "balance")
+    private Double balance;
 
+    public Player(String name, String lastName, String email, Integer phoneNumber, String location, String country, Double balance) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
+        this.country = country;
+        this.balance = balance;
+    }
 }

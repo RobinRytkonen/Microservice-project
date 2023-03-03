@@ -1,0 +1,21 @@
+server.port: 8087
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: 'org.example.LeoProjectKafkaDTOS'
+
+  liquibase:
+    change-log: classpath:/liquibase-payment/changelog-master.xml
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/payment_service
+    username: root
+    password: password

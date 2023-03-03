@@ -4,18 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;commit&quot;">
-      <change afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerKafkaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/repository/PlayerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cd51c2bda7d75ab8863d4f5b71abce9abc120bc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85e85db9951af7e01207af0e938ca6feab8a6632" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c96f5d440b56fd4ecb9967de9816d88f8ddf7bc8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="5b261d41-8e63-44d3-b5c0-41570b0a2096" name="Changes" comment="&quot;some updates added test dtos as contants, fixed all wildcard imports, PlayerControllerTests should now work, hibernate should not create tables and made different paths for liquibase in each service&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/resources/liquibase/changelog-1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/controller/GamingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/entity/Bet.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/entity/Bet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/service/GamingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/RandomUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/main/java/com/work/LeoProjectGaming/util/RandomUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/test/java/com/work/LeoProjectGaming/GamingServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/test/java/com/work/LeoProjectGaming/GamingServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectGaming/src/test/java/com/work/LeoProjectGaming/TestConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectGaming/src/test/java/com/work/LeoProjectGaming/TestConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/BettingTransferDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/BettingTransferDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/TransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectKafkaDTOS/src/main/java/org/example/LeoProjectKafkaDTOS/TransactionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/entity/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/main/java/com/work/LeoProjectPayment/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/test/java/com/work/LeoProjectPayment/PaymentServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/test/java/com/work/LeoProjectPayment/PaymentServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPayment/src/test/java/com/work/LeoProjectPayment/TestConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPayment/src/test/java/com/work/LeoProjectPayment/TestConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerKafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/controller/PlayerKafkaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/dtos/PlayerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/dtos/PlayerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerKafkaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/main/java/com/work/LeoProjectPlayer/service/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/PlayerControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/PlayerControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/PlayerKafkaServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/PlayerKafkaServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/PlayerServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/PlayerServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/TestConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeoProjectPlayer/src/test/java/com/work/LeoProjectPlayer/TestConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +47,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -48,25 +69,41 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2Le7ySuw94NH0CGcDLKhXG1nX2r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/robin.rytkonen/Documents/Workleo/mircoservice-workspace&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.17989421&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/robin.rytkonen/Documents/Workleo/mircoservice-workspace/LeoProjectPlayer/src/test/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.17989421",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LeoProjectPlayer/src/test/resources" />
+      <recent name="$PROJECT_DIR$/LeoProjectGaming/src/test/resources" />
+      <recent name="$PROJECT_DIR$/LeoProjectPayment/src/test/resources" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/LeoProjectPayment/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LeoProjectGaming/src/test" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -74,35 +111,40 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LeoProjectPlayerApplication">
-    <configuration name="LeoProjectGamingApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.work.LeoProjectGaming.LeoProjectGamingApplication" />
+  <component name="RunManager" selected="JUnit.All in LeoProjectGaming">
+    <configuration name="All in LeoProjectGaming" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LeoProjectGaming" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.work.LeoProjectGaming.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LeoProjectPaymentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.work.LeoProjectPayment.LeoProjectPaymentApplication" />
+    <configuration name="All in LeoProjectPayment (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LeoProjectPayment" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.work.LeoProjectPayment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LeoProjectPlayerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.work.LeoProjectPlayer.LeoProjectPlayerApplication" />
+    <configuration name="All in LeoProjectPlayer (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LeoProjectPlayer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in LeoProjectPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LeoProjectPlayer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerKafkaServiceTests.should_update_player_balance_with_deposit_amount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LeoProjectPlayer" />
       <extension name="coverage">
         <pattern>
@@ -110,29 +152,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="hgg" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="com.work.LeoProjectPlayer" />
+      <option name="MAIN_CLASS_NAME" value="com.work.LeoProjectPlayer.PlayerKafkaServiceTests" />
+      <option name="METHOD_NAME" value="should_update_player_balance_with_deposit_amount" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LeoProjectPlayerApplication" />
-        <item itemvalue="Application.LeoProjectPaymentApplication" />
-        <item itemvalue="Application.LeoProjectGamingApplication" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in LeoProjectGaming" />
+        <item itemvalue="JUnit.All in LeoProjectPayment (1)" />
+        <item itemvalue="JUnit.All in LeoProjectPlayer (1)" />
+        <item itemvalue="JUnit.PlayerKafkaServiceTests.should_update_player_balance_with_deposit_amount" />
+        <item itemvalue="JUnit.All in LeoProjectPlayer" />
       </list>
     </recent_temporary>
   </component>
@@ -159,11 +193,126 @@
       <option name="project" value="LOCAL" />
       <updated>1676273884494</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;added Player entity&quot;">
+      <created>1676277419281</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676277419281</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&quot;added (temporary) betting win/lose in gaming service, updated player service and small name changes&quot;">
+      <created>1676458834623</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676458834623</updated>
+    </task>
+    <task id="LOCAL-00005" summary="&quot;simplyfied betting, small rename changes&quot;">
+      <created>1676468928778</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676468928778</updated>
+    </task>
+    <task id="LOCAL-00006" summary="&quot;added transactionDTO for kafka, added topic builder in payment config and Transaction entity&quot;">
+      <created>1676473408347</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676473408347</updated>
+    </task>
+    <task id="LOCAL-00007" summary="&quot;finished payment Service, sending transaction topic to player service and added listener in player service&quot;">
+      <created>1676536548900</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676536548900</updated>
+    </task>
+    <task id="LOCAL-00008" summary="&quot;deleted sonarlint file in workspace and added gitignore&quot;">
+      <created>1676544381757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676544381757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="&quot;ops&quot;">
+      <created>1676544636467</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676544636467</updated>
+    </task>
+    <task id="LOCAL-00010" summary="&quot;small fixes across the board with some naming conventions, updated betting logic(will be updated more)&quot;">
+      <created>1676556100134</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676556100134</updated>
+    </task>
+    <task id="LOCAL-00011" summary="&quot;updated PlayerService.editPlayer&quot;">
+      <created>1676556999064</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676556999064</updated>
+    </task>
+    <task id="LOCAL-00012" summary="&quot;small code improvements and added tests for PlayerService, PlayerKafkaService&quot;">
+      <created>1677074154551</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677074154551</updated>
+    </task>
+    <task id="LOCAL-00013" summary="&quot;added integration tests for controllers on all services, small fixes and configs&quot;">
+      <created>1677239963024</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677239963024</updated>
+    </task>
+    <task id="LOCAL-00014" summary="&quot;some updates added test dtos as contants, fixed all wildcard imports, PlayerControllerTests should now work, hibernate should not create tables and made different paths for liquibase in each service&quot;">
+      <created>1677509313093</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677509313094</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;commit&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;commit&quot;" />
+    <MESSAGE value="&quot;added Player entity&quot;" />
+    <MESSAGE value="&quot;added (temporary) betting win/lose in gaming service, updated player service and small name changes&quot;" />
+    <MESSAGE value="&quot;simplyfied betting, small rename changes&quot;" />
+    <MESSAGE value="&quot;added transactionDTO for kafka, added topic builder in payment config and Transaction entity&quot;" />
+    <MESSAGE value="&quot;finished payment Service, sending transaction topic to player service and added listener in player service&quot;" />
+    <MESSAGE value="&quot;deleted sonarlint file in workspace and added gitignore&quot;" />
+    <MESSAGE value="&quot;ops&quot;" />
+    <MESSAGE value="&quot;small fixes across the board with some naming conventions, updated betting logic(will be updated more)&quot;" />
+    <MESSAGE value="&quot;updated PlayerService.editPlayer&quot;" />
+    <MESSAGE value="&quot;small code improvements and added tests for PlayerService, PlayerKafkaService&quot;" />
+    <MESSAGE value="&quot;added integration tests for controllers on all services, small fixes and configs&quot;" />
+    <MESSAGE value="&quot;some updates added test dtos as contants, fixed all wildcard imports, PlayerControllerTests should now work, hibernate should not create tables and made different paths for liquibase in each service&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;some updates added test dtos as contants, fixed all wildcard imports, PlayerControllerTests should now work, hibernate should not create tables and made different paths for liquibase in each service&quot;" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mircoservice_workspace$LeoProjectPlayerApplication.ic" NAME="LeoProjectPlayerApplication Coverage Results" MODIFIED="1677160225329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.work.LeoProjectPlayer.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/mircoservice_workspace$All_in_LeoProjectPlayer.ic" NAME="All in LeoProjectPlayer Coverage Results" MODIFIED="1677233761596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/mircoservice_workspace$All_in_LeoProjectGaming.ic" NAME="All in LeoProjectGaming Coverage Results" MODIFIED="1677233848418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/mircoservice_workspace$All_in_LeoProjectPayment.ic" NAME="All in LeoProjectPayment Coverage Results" MODIFIED="1677233808922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
