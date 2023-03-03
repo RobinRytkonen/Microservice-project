@@ -4,24 +4,25 @@ import com.work.LeoProjectGaming.entity.Bet;
 import com.work.LeoProjectGaming.repository.BettingHistoryRepository;
 import com.work.LeoProjectGaming.service.GamingService;
 import com.work.LeoProjectGaming.util.RandomUtil;
-import java.util.Date;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.kafka.core.KafkaTemplate;
+
+import java.util.Date;
 
 import static com.work.LeoProjectGaming.TestConstants.BETTING_TRANSFER_DTO;
 import static com.work.LeoProjectGaming.util.Constants.BETTING_TRANSFER_TOPIC;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mockStatic;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class GamingServiceTests {

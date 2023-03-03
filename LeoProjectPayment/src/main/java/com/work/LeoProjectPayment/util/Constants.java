@@ -7,5 +7,5 @@ public class Constants {
 
     public static final String TRANSACTION_TOPIC = "Transaction_Topic";
 
-    public static final int RETENTION_MS = 10000;
+    public static final Integer RETENTION_MS = 10000;
 }

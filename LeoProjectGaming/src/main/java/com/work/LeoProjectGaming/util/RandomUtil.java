@@ -9,7 +9,7 @@ public class RandomUtil {
         return new Random().nextBoolean();
     }
 
-    public static int getRandomInteger() {
+    public static Integer getRandomInteger() {
         return new Random().nextInt(100);
     }
 }

@@ -16,8 +16,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import static com.work.LeoProjectPayment.TestConstants.TRANSACTION_DTO;
 import static com.work.LeoProjectPayment.util.Constants.TRANSACTION_TOPIC;
 import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class PaymentServiceTests {

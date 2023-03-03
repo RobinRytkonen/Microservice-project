@@ -1,14 +1,14 @@
 package com.work.LeoProjectPlayer.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import lombok.Setter;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Setter
@@ -22,7 +22,7 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "player_id")
-    private int playerId;
+    private Integer playerId;
 
     @Column(name = "name")
     private String name;
@@ -34,7 +34,7 @@ public class Player {
     private String email;
 
     @Column(name = "phone_number")
-    private int phoneNumber;
+    private Integer phoneNumber;
 
     @Column(name = "location")
     private String location;
@@ -43,9 +43,9 @@ public class Player {
     private String country;
 
     @Column(name = "balance")
-    private double balance;
+    private Double balance;
 
-    public Player(String name, String lastName, String email, int phoneNumber, String location, String country, double balance) {
+    public Player(String name, String lastName, String email, Integer phoneNumber, String location, String country, Double balance) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;

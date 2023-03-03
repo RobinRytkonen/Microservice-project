@@ -4,22 +4,23 @@ import com.google.gson.Gson;
 import com.work.LeoProjectPlayer.entity.Player;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
+
 import java.util.List;
 
 import static com.work.LeoProjectPlayer.TestConstants.LIST_OF_PLAYERS;
-import static com.work.LeoProjectPlayer.TestConstants.PLAYER_EDIT_DTO;
 import static com.work.LeoProjectPlayer.TestConstants.PLAYER_CREATE_DTO;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static com.work.LeoProjectPlayer.TestConstants.PLAYER_EDIT_DTO;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;

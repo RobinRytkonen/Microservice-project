@@ -3,7 +3,6 @@ package com.work.LeoProjectPlayer;
 import com.work.LeoProjectPlayer.entity.Player;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import com.work.LeoProjectPlayer.service.PlayerService;
-import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,15 +12,17 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static com.work.LeoProjectPlayer.TestConstants.LIST_OF_PLAYERS;
+import static com.work.LeoProjectPlayer.TestConstants.PLAYER;
 import static com.work.LeoProjectPlayer.TestConstants.PLAYER_DTO;
 import static com.work.LeoProjectPlayer.TestConstants.PLAYER_EDIT_DTO;
-import static com.work.LeoProjectPlayer.TestConstants.PLAYER;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyInt;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class PlayerServiceTests {
@@ -120,7 +121,5 @@ class PlayerServiceTests {
         Assertions.assertEquals(PLAYER_EDIT_DTO.getPhoneNumber(), playerArgumentCaptor.getValue().getPhoneNumber());
         Assertions.assertEquals(PLAYER_EDIT_DTO.getLocation(), playerArgumentCaptor.getValue().getLocation());
         Assertions.assertEquals(PLAYER_EDIT_DTO.getCountry(), playerArgumentCaptor.getValue().getCountry());
-
-
     }
 }

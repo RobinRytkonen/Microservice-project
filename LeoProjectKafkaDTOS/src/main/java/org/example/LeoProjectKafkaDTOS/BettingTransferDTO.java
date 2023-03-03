@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BettingTransferDTO {
 
-    private int playerId;
+    private Integer playerId;
 
-    private double betAmount;
+    private Double betAmount;
 
-    private double winAmount;
+    private Double winAmount;
 
-    public BettingTransferDTO(int playerId, double betAmount) {
+    public BettingTransferDTO(int playerId, Double betAmount) {
         this.playerId = playerId;
         this.betAmount = betAmount;
     }

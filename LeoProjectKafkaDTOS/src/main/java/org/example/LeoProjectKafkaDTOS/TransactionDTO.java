@@ -9,12 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TransactionDTO {
 
-    private int transactionId;
+    private Integer transactionId;
 
     private String type;
 
-    private int transactionAmount;
-
-
-
+    private Double transactionAmount;
 }

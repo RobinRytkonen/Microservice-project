@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PlayerDTO {
 
-    private int playerId;
+    private Integer playerId;
 
     private String name;
 
@@ -17,15 +17,15 @@ public class PlayerDTO {
 
     private String email;
 
-    private int phoneNumber;
+    private Integer phoneNumber;
 
     private String location;
 
     private String country;
 
-    private double balance;
+    private Double balance;
 
-    public PlayerDTO(String name, String lastName, String email, int phoneNumber, String location, String country, double balance) {
+    public PlayerDTO(String name, String lastName, String email, Integer phoneNumber, String location, String country, Double balance) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
