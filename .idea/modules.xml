@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LeoProjectGaming/LeoProjectGaming.iml" filepath="$PROJECT_DIR$/LeoProjectGaming/LeoProjectGaming.iml" />
       <module fileurl="file://$PROJECT_DIR$/mircoservice-workspace.iml" filepath="$PROJECT_DIR$/mircoservice-workspace.iml" />
     </modules>
   </component>

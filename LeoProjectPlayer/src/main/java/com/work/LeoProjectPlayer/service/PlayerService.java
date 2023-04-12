@@ -1,7 +1,7 @@
 package com.work.LeoProjectPlayer.service;
 
 import com.work.LeoProjectPlayer.dtos.PlayerDTO;
-import com.work.LeoProjectPlayer.entity.Player;
+import com.work.LeoProjectPlayer.entity.PlayerLombok;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,12 +23,12 @@ public class PlayerService {
         this.playerRepository = playerRepository;
     }
 
-    public Collection<Player> getAll() {
+    public Collection<PlayerLombok> getAll() {
         return playerRepository.findAll();
     }
 
-    public Player getPlayer(int id) {
-        Optional<Player> player = playerRepository.findById(id);
+    public PlayerLombok getPlayer(int id) {
+        Optional<PlayerLombok> player = playerRepository.findById(id);
         if (player.isEmpty()) {
             log.info(NO_PLAYER_PRESENT);
             return null;
@@ -36,17 +36,18 @@ public class PlayerService {
         return player.get();
     }
 
-    public Player register(PlayerDTO playerDTO) {
-        Optional<Player> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
+    public PlayerLombok register(PlayerDTO playerDTO) {
+        Optional<PlayerLombok> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
         if (player.isEmpty()) {
-            Player newPlayer = new Player(
+            PlayerLombok newPlayer = new PlayerLombok(
                     playerDTO.getName(),
                     playerDTO.getLastName(),
                     playerDTO.getEmail(),
                     playerDTO.getPhoneNumber(),
                     playerDTO.getLocation(),
                     playerDTO.getCountry(),
-                    playerDTO.getBalance());
+                    playerDTO.getBalance()
+            );
             playerRepository.save(newPlayer);
             log.info(newPlayer);
             return newPlayer;
@@ -56,7 +57,7 @@ public class PlayerService {
     }
 
     public void deletePlayer(PlayerDTO playerDTO) {
-        Optional<Player> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
+        Optional<PlayerLombok> player = playerRepository.findByNameAndEmail(playerDTO.getName(), playerDTO.getEmail());
         if (player.isEmpty()) {
             log.info(NO_PLAYER_PRESENT);
         }
@@ -64,13 +65,13 @@ public class PlayerService {
         log.info(player);
     }
 
-    public Player editPlayer(PlayerDTO playerDTO) {
-        Optional<Player> player = playerRepository.findById(playerDTO.getPlayerId());
+    public PlayerLombok editPlayer(PlayerDTO playerDTO) {
+        Optional<PlayerLombok> player = playerRepository.findById(playerDTO.getPlayerId());
         if (player.isEmpty()) {
             log.info("No registered player with that id!");
             return null;
         }
-        Player updatedPlayer = player.get();
+        PlayerLombok updatedPlayer = player.get();
         updatedPlayer.setName(playerDTO.getName());
         updatedPlayer.setLastName(playerDTO.getLastName());
         updatedPlayer.setEmail(playerDTO.getEmail());

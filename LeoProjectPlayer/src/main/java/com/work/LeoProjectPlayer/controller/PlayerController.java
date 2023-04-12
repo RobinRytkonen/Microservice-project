@@ -1,7 +1,7 @@
 package com.work.LeoProjectPlayer.controller;
 
 import com.work.LeoProjectPlayer.dtos.PlayerDTO;
-import com.work.LeoProjectPlayer.entity.Player;
+import com.work.LeoProjectPlayer.entity.PlayerLombok;
 import com.work.LeoProjectPlayer.service.PlayerService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,17 +25,17 @@ public class PlayerController {
     }
 
     @GetMapping("/all")
-    public Collection<Player> getAll() {
+    public Collection<PlayerLombok> getAll() {
         return playerService.getAll();
     }
 
     @GetMapping("/get_player/{id}")
-    public Player getPlayer(@PathVariable Integer id) {
+    public PlayerLombok getPlayer(@PathVariable Integer id) {
         return playerService.getPlayer(id);
     }
 
     @PostMapping("/register")
-    public Player register(@RequestBody PlayerDTO playerDTO) {
+    public PlayerLombok register(@RequestBody PlayerDTO playerDTO) {
         return playerService.register(playerDTO);
     }
 
@@ -45,7 +45,7 @@ public class PlayerController {
     }
 
     @PutMapping("/edit_player")
-    public Player editPlayer(@RequestBody PlayerDTO playerDTO) {
+    public PlayerLombok editPlayer(@RequestBody PlayerDTO playerDTO) {
         return playerService.editPlayer(playerDTO);
     }
 }

@@ -1,6 +1,6 @@
 package com.work.LeoProjectPlayer;
 
-import com.work.LeoProjectPlayer.entity.Player;
+import com.work.LeoProjectPlayer.entity.PlayerLombok;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import com.work.LeoProjectPlayer.service.PlayerKafkaService;
 import org.junit.jupiter.api.Assertions;
@@ -33,7 +33,7 @@ class PlayerKafkaServiceTests {
     PlayerKafkaService playerKafkaService;
 
     @Captor
-    ArgumentCaptor<Player> playerArgumentCaptor;
+    ArgumentCaptor<PlayerLombok> playerArgumentCaptor;
 
     @BeforeEach
     void init() {

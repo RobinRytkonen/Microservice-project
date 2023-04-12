@@ -1,7 +1,7 @@
 package com.work.LeoProjectPlayer;
 
 import com.google.gson.Gson;
-import com.work.LeoProjectPlayer.entity.Player;
+import com.work.LeoProjectPlayer.entity.PlayerLombok;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -38,7 +38,7 @@ class PlayerControllerTests {
     @Autowired
     PlayerRepository playerRepository;
 
-    List<Player> currentPlayers;
+    List<PlayerLombok> currentPlayers;
 
     @BeforeEach
     void init() {
@@ -66,7 +66,7 @@ class PlayerControllerTests {
     @Test
     void should_return_player() throws Exception {
 
-        Player player =  currentPlayers.get(0);
+        PlayerLombok player =  currentPlayers.get(0);
         Gson gson = new Gson();
         String response = gson.toJson(currentPlayers.get(0));
 
@@ -94,7 +94,7 @@ class PlayerControllerTests {
     @Test
     void should_delete_player() throws Exception {
 
-        Player player = currentPlayers.get(0);
+        PlayerLombok player = currentPlayers.get(0);
         Gson gson = new Gson();
         String requestDTO = gson.toJson(player);
 

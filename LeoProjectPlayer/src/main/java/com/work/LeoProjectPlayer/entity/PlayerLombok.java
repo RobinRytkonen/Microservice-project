@@ -10,6 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.apache.commons.lang3.ObjectUtils;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -17,7 +20,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Player {
+public class PlayerLombok {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +48,7 @@ public class Player {
     @Column(name = "balance")
     private Double balance;
 
-    public Player(String name, String lastName, String email, Integer phoneNumber, String location, String country, Double balance) {
+    public PlayerLombok(String name, String lastName, String email, Integer phoneNumber, String location, String country, Double balance) {
         this.name = name;
         this.lastName = lastName;
         this.email = email;

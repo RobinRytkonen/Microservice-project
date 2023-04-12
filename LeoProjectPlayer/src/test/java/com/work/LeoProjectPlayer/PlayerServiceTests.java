@@ -1,6 +1,6 @@
 package com.work.LeoProjectPlayer;
 
-import com.work.LeoProjectPlayer.entity.Player;
+import com.work.LeoProjectPlayer.entity.PlayerLombok;
 import com.work.LeoProjectPlayer.repository.PlayerRepository;
 import com.work.LeoProjectPlayer.service.PlayerService;
 import org.junit.jupiter.api.Assertions;
@@ -34,7 +34,7 @@ class PlayerServiceTests {
     PlayerService playerService;
 
     @Captor
-    ArgumentCaptor<Player> playerArgumentCaptor;
+    ArgumentCaptor<PlayerLombok> playerArgumentCaptor;
 
     @Test
     void should_return_list_of_players() {
